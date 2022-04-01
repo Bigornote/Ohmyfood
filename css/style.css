@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+.shrikhand {
+  font-family: "Shrikhand", cursive;
+}
+
+.roboto {
+  font-family: "Roboto", Arial, sans-serif;
+}
+.roboto--thin {
+  font-weight: 100;
+}
+.roboto--regular {
+  font-weight: 400;
+}
+
+html, body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  text-align: left;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.flex {
+  display: flex;
+}
+.flex__center {
+  justify-content: center;
+}
+.flex__between {
+  justify-content: space-between;
+}
+.flex__around {
+  justify-content: space-around;
+}
+.flex__alignLeft {
+  align-items: left;
+}
+.flex__alignCenter {
+  align-items: center;
+}
+.flex__alignRight {
+  align-items: right;
+}
+.flex__row {
+  flex-direction: row;
+}
+.flex__rowReverse {
+  flex-direction: row-reverse;
+}
+.flex__column {
+  flex-direction: column;
+}
+.flex__columnReverse {
+  flex-direction: column-reverse;
+}
+
+.container {
+  margin: 30px auto;
+}
+
+ul a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px #FF79DA;
+  -moz-box-shadow: 0px 0px 5px #FF79DA;
+  box-shadow: 0px 0px 5px #FF79DA;
+}
+
+footer {
+  background-color: #353535;
+}
+
+/*# sourceMappingURL=style.css.map */

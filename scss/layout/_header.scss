@@ -1,0 +1,6 @@
+header {
+    width: 100%;
+    padding: 10px 0;
+    background-color: $bg-primary;
+    @include box-shadow(0px 0px 5px $color-secondary);
+}
