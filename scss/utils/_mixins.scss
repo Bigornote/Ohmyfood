@@ -1,3 +1,10 @@
+// Mixins Container 
+@mixin container ($display: flex, $jc: center, $ai: center){
+  display: $display;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
 // --- Mixins Flex
 // Flexbox --> (utilisation d'un placeholder) %flexbox { @include flexbox; }
 @mixin flexbox {
@@ -7,119 +14,6 @@
     display: -ms-flexbox;
     display: flex;
 }
-
-// InlineFlex --> %inline-flex { @include inline-flex; }
-@mixin inline-flex {
-    display: -webkit-inline-box;
-    display: -moz-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-}
-
-// FlexDirection --> @include flex-direction($args...);
-@mixin flex-direction($value: row) {
-    @if $value == row-reverse {
-      -webkit-box-direction: reverse;
-      -webkit-box-orient: horizontal;
-      -moz-box-direction: reverse;
-      -moz-box-orient: horizontal;
-    } @else if $value == column {
-      -webkit-box-direction: normal;
-      -webkit-box-orient: vertical;
-      -moz-box-direction: normal;
-      -moz-box-orient: vertical;
-    } @else if $value == column-reverse {
-      -webkit-box-direction: reverse;
-      -webkit-box-orient: vertical;
-      -moz-box-direction: reverse;
-      -moz-box-orient: vertical;
-    } @else {
-      -webkit-box-direction: normal;
-      -webkit-box-orient: horizontal;
-      -moz-box-direction: normal;
-      -moz-box-orient: horizontal;
-    }
-
-    -webkit-flex-direction: $value;
-    -ms-flex-direction: $value;
-    flex-direction: $value;
-}
-
-@mixin flex-dir($args...) { 
-    @include flex-direction($args...); 
-}
-
-//Flex-Wrap
-@mixin flex-wrap($value: nowrap) {
-    // No Webkit/FF Box fallback.
-    -webkit-flex-wrap: $value;
-    @if $value == nowrap {
-      -ms-flex-wrap: none;
-    } @else {
-      -ms-flex-wrap: $value;
-    }
-
-    flex-wrap: $value;
-}
-
-//Flex-Flow (propriété raccourcie pour définir flex-direction et flex-wrap)
-@mixin flex-flow($values: (row nowrap)) {
-    // No Webkit/FF Box fallback.
-    -webkit-flex-flow: $values;
-    -ms-flex-flow: $values;
-    flex-flow: $values;
-}
-
-//Justify-content
-@mixin justify-content($value: flex-start) {
-    @if $value == flex-start {
-      -webkit-box-pack: start;
-      -moz-box-pack: start;
-      -ms-flex-pack: start;
-    } @else if $value == flex-end {
-      -webkit-box-pack: end;
-      -moz-box-pack: end;
-      -ms-flex-pack: end;
-    } @else if $value == space-between {
-      -webkit-box-pack: justify;
-      -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-    } @else if $value == space-around {
-      -ms-flex-pack: distribute;
-    } @else {
-      -webkit-box-pack: $value;
-      -moz-box-pack: $value;
-      -ms-flex-pack: $value;
-    }
-    -webkit-justify-content: $value;
-    justify-content: $value;
-}
-@mixin flex-just($args...) { 
-    @include justify-content($args...); 
-}
-
-//Align-content 
-@mixin align-items($value: stretch) {
-    @if $value == flex-start {
-      -webkit-box-align: start;
-      -moz-box-align: start;
-      -ms-flex-align: start;
-    } @else if $value == flex-end {
-      -webkit-box-align: end;
-      -moz-box-align: end;
-      -ms-flex-align: end;
-    } @else {
-      -webkit-box-align: $value;
-      -moz-box-align: $value;
-      -ms-flex-align: $value;
-    }
-
-    -webkit-align-items: $value;
-    align-items: $value;
-}
-
-//--- Fin Mixins Flex
 
 //Box Shadow --> @include box-shadow(0px 0px 5px blue);
 @mixin box-shadow($params) {
@@ -133,13 +27,6 @@
 @mixin font-size($size) {
     font-size:$size;
     font-size: ($size / 16px) * 1rem;
-}
-
-
-//Opacity --> @include opacity(0.5);
-@mixin opacity($opacity) {
-    opacity: $opacity;
-    filter: alpha(opacity=($opacity * 100));
 }
 
  // Border Radius 
