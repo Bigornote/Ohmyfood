@@ -1,0 +1,146 @@
+// -- PAGE D'ACCUEIL
+
+.info {
+    max-width: 1080px;
+    margin: auto;
+}
+
+.flex {
+    @include flexPosition();
+    flex-direction: column;
+    flex-wrap: wrap;
+    @media #{$medium-up}{
+        flex-direction: row;
+
+        & .fonctionnement,
+        & .reserver {
+            width: 48%;
+            margin: 0;
+            text-align: left;
+        }
+    }
+}
+// Bouton de recherche Accueil
+.search {
+    width: 100%;
+    @include flexPosition(flex , center, center);
+    background-color: #eaeaea;
+    padding: 5px 0;
+    gap: 10px;
+    @include box-shadow (0px 5px 10px -5px rgba(0,0,0, 0.20) inset);
+    & .icon__search {
+        color: $bg-tiertiary;
+        position: relative;
+        & i {
+            position: absolute;
+            top: -12px;
+            left: 0;
+        }
+    }
+    & .input__search {
+        width: 150px;
+        background: transparent;
+        border: none;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bolder;
+        color: $bg-tiertiary;
+        &:focus-visible {
+            outline: none;
+        }
+        &::placeholder {
+            font-size: 14px;
+            font-weight: bolder;
+            color: $bg-tiertiary;
+        }
+    }
+}
+
+// Page d'accueil Réservation 
+.reserver {
+    width: 100%;
+    padding: 20px;
+    background-color: $bg-secondary;
+    text-align: center;
+    @media #{$medium-up} {
+        background: none;
+    }
+    & .text {
+        margin-bottom: 20px;
+    }
+    & > div {
+        animation: fadeIn 1s ease-in-out forwards;
+        animation-delay: 1.8s;
+        opacity: 0;
+    }
+}
+
+
+// Page d'accueil Fonctionnement 
+.fonctionnement {
+    padding: 50px 0;
+    margin: auto 20px;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1.8s;
+    opacity: 0;
+    & .title {
+        @include flexPosition(flex, left);
+    }
+    & .container {
+        @include flexPosition(flex, center, center);
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+}
+
+// Page d'accueil Restaurants
+.restaurants {
+    background-color: $bg-secondary;
+    padding: 50px 20px;
+    @media #{$large-up} {
+        padding: 100px 20px;
+    }
+    & .title {
+        @include flexPosition(flex, left);
+        @media #{$large-up} {
+            margin: 0px auto 20px;
+            padding-left: 20px;
+        }
+    }
+    & .container {
+        @include flexPosition(flex, center, center);
+        animation: fadeIn 1s ease-in-out forwards;
+        opacity: 0;
+        animation-delay: 2s;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        @media #{$large-up} {
+            margin: auto;
+        }
+        // Nouveauté 
+        :nth-child(1) .card__img::before,
+        :nth-child(2) .card__img::before {
+        @include pseudo(block, absolute,'Nouveauté');
+        @include flexPosition();
+        width: 80px;
+        height: 30px;
+        top: 15px;
+        right: 15px;
+        color: $color-new;
+        background: $color-tiertiary;
+        z-index: 2;
+        @include border-radius(5px);
+        font-size: 14px;
+        font-weight: 500;
+    }
+    }
+    & .title,
+    & .container {
+        max-width: 1600px;
+    }
+
+}

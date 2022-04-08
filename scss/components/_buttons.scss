@@ -1,0 +1,72 @@
+.btn {
+    position: relative;
+    border: none;
+    @include box-shadow (5px 5px 10px rgba(0,0,0,0.25));
+    @include transition (all 0.3s ease);
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 16px;
+
+    //BTN Style Default    
+    &__default {
+        @include border-radius(20px);
+        width: 95%;
+        background-color: $bg-secondary;
+        color: $color-black;
+        text-align: left;
+        padding: 20px;
+        & .icon {
+            color: $color-icon;
+            padding: 0 10px;
+        }
+    }
+
+    //BTN Style Primary   
+    &__primary {
+        @include border-radius(50px);
+        @include gradient($color-secondary, $color-primary, vertical);
+        width: 70%;
+        color: $color-white;
+        text-align: center;
+        padding: 15px;
+        max-width: 325px;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    //BTN Style Default -- Fonctionnement // Before
+    &__fonctionnement {
+        &::before {
+            @include border-radius(100%);
+            @include flexPosition(flex, center, center);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: $color-primary;
+            width: 25px;
+            height: 25px;
+            transform: translate(-50%, -50%);
+            color: $color-white;
+            text-align: center;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        &:nth-child(1)::before {
+            content: '1';
+        }
+        &:nth-child(2)::before {
+            content: '2';
+        }
+        &:nth-child(3)::before {
+            content: '3';
+        }
+    }
+    &:hover {
+        @include box-shadow (5px 8px 15px rgba(0,0,0,0.35));
+    }
+    // Hover Icon
+    &:hover .icon {
+        color: $color-primary;
+    }
+}

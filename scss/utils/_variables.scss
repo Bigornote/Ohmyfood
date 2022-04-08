@@ -1,10 +1,28 @@
+// Color
 $color-primary : #9356DC;
 $color-secondary :#FF79DA ;
 $color-tiertiary : #99E2D0;
 $color-white : #fff;
 $color-black: #000;
 $color-new :#008766;
+$color-icon : #7E7E7E;
 
+// Background
 $bg-primary : #fff;
 $bg-secondary: #f6f6f6;
 $bg-tiertiary: #353535;
+
+
+// Font
+$font-primary :'Shrikhand', cursive;
+$font-secondary: 'Roboto', Arial, sans-serif;
+
+// Responsive
+$medium : 768px !default; 
+$large : 1080px !default;
+
+$medium-up: "only screen and (min-width: #{$medium})";
+$medium-down: "only screen and (max-width: #{$medium})";
+
+$large-up: "only screen and (min-width: #{$large})";
+$large-down: "only screen and (max-width: #{$large})";

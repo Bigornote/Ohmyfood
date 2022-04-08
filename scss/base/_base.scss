@@ -1,8 +1,9 @@
+// Classe générique 
 html,body {
     margin: 0;
     font-family: 'Roboto', Arial, sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     color: $color-black;
     text-align: left;
@@ -15,43 +16,16 @@ html,body {
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
-}
-
-.container {
-    @include container;
+    box-sizing: border-box;
 }
 
 ul {
     li {
         list-style-type: none;
     }
-    a {
-        text-decoration: none;
-    }
+    
 }
-.fonctionnement {
-    @include container(flex, center, flex-start);
-    flex-direction: column;
-    padding: 50px 0;
-    margin: auto 20px;
-}
-#restaurants {
-    gap: 20px;
-    background-color: $bg-secondary;
-    padding: 50px 0;
-    &.container {
-        flex-direction: column;
-    }
-}
-
-form {
-    & input {
-        width: 100%;
-        padding: 10px 0;
-        background-color: #f6f6f6;
-        color: $color-black;
-        border: none;
-        text-align: center;
-    }
+a {
+    text-decoration: none;
+    color: $color-black;
 }

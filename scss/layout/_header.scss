@@ -3,7 +3,8 @@ header {
     padding: 20px 0 15px;
     background-color: $bg-primary;
     @include box-shadow (5px 5px 10px rgba(0,0,0,0.25));
-    & img {
+    @include flexPosition(flex, center, center);
+    & .header__logo {
         width: 170px;
     }
 }

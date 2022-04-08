@@ -1,0 +1,60 @@
+// Page Menu
+.page__menu {
+    background-color: $bg-secondary;
+}
+.hero {
+    
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        @media #{$medium-up} {
+            max-height: 500px;
+        }
+    }
+}
+
+.menu {
+    position: relative;
+    top: -50px;
+    left: 0;
+    padding: 20px;
+    background-color: $bg-secondary;
+    @include border-radius(20px 20px 0 0);
+    @media #{$large-up} {
+        max-width: 1400px;
+        margin: auto;
+        @include box-shadow (5px 5px 10px rgba(0,0,0,0.25));
+        @include border-radius(20px);
+        padding: 40px;
+    }
+    &__title {
+        @include flexPosition (flex, space-between, center);
+        & .title {
+            margin: 0;
+        }
+    }
+    &__container {
+        margin: 30px 0;
+    }
+    &__btn {
+        @include flexPosition();
+    }
+    .container__box {
+        @include flexPosition(flex, center, flex-start);
+        flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+        @media #{$medium-up} {
+            justify-content: flex-start;
+            flex-direction: row;
+        }
+    }
+}
+.icon--back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    &:hover i {
+        color: $color-primary;
+    }
+}
