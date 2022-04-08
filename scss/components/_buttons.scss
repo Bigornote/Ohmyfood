@@ -2,7 +2,7 @@
     position: relative;
     border: none;
     @include box-shadow (5px 5px 10px rgba(0,0,0,0.25));
-    @include transition (all 0.3s ease);
+    transition: all 0.3s ease;
     cursor: pointer;
     font-weight: bolder;
     font-size: 16px;
@@ -40,13 +40,13 @@
         &::before {
             @include border-radius(100%);
             @include flexPosition(flex, center, center);
+            @include transform(translate(-50%, -50%));
             position: absolute;
             top: 50%;
             left: 0;
             background: $color-primary;
             width: 25px;
             height: 25px;
-            transform: translate(-50%, -50%);
             color: $color-white;
             text-align: center;
             font-weight: 400;
