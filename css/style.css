@@ -405,15 +405,13 @@ a {
   background-color: #fff;
   animation: disappear 4s ease-in-out both;
 }
-
-.loader-ellipsis {
+.loader .loader-ellipsis {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
-
-.loader-ellipsis div {
+.loader .loader-ellipsis div {
   background: #99E2D0;
   position: absolute;
   top: 33px;
